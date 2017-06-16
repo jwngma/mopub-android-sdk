@@ -1,0 +1,41 @@
+<RelativeLayout ...>
+  <ImageView android:id="@+id/native_ad_main_image"
+    ... />
+  <ImageView android:id="@+id/native_ad_icon_image"
+    ... />
+  <TextView android:id="@+id/native_ad_title"
+    ... />
+  <TextView android:id="@+id/native_ad_text"
+    ... />
+  <ImageView android:id="@+id/native_ad_privacy_information_icon_image"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:padding="10dp"
+    ... />
+</RelativeLayout>
+<ImageView
+ android:background="@null"
+ ... />
+ ViewBinder viewBinder = new ViewBinder.Builder(R.layout.native_ad_layout)
+    .mainImageId(R.id.native_ad_main_image)
+    .iconImageId(R.id.native_ad_icon_image)
+    .titleId(R.id.native_ad_title)
+    .textId(R.id.native_ad_text)
+    .privacyInformationIconImageId(R.id.native_ad_privacy_information_icon_image)
+    .build();
+    new ViewBinder.Builder().addExtras(Map<String, Integer> resIds)
+    "sponsoredtext" : "Sponsored",
+  "sponsoredimage" : "http://www.mopub.com/sponsored.jpg"
+  ViewBinder viewBinder = new ViewBinder.Builder(R.layout.native_ad_layout)
+  .mainImageId(R.id.native_ad_main_image)
+  .iconImageId(R.id.native_ad_icon_image)
+  .titleId(R.id.native_ad_title)
+  .textId(R.id.native_ad_text)
+  .privacyInformationIconImageId(R.id.native_ad_privacy_information_icon_image)
+  // Your custom fields are bound with the addExtra() call.
+  .addExtra("sponsoredtext", R.id.sponsored_text)
+  .addExtra("sponsoredimage", R.id.sponsored_image)
+  .build();
+  MoPubNativeAdPositioning.MoPubServerPositioning adPositioning =
+      MoPubNativeAdPositioning.serverPositioning();
+          myListView.setAdapter(mAdAdapter);
